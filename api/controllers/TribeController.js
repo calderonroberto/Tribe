@@ -39,8 +39,4 @@ module.exports = {
 			});
     });
   }
-
-
-
->>>>>>> parent of b1fa045... First TribesFrontEnd
 };
