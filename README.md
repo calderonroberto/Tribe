@@ -25,6 +25,10 @@ The application will run with a local database. To use mongoDB, make sure to com
 ```
 
 
+## DEPLOYING WITH HEROKU
+
+http://pburtchaell.com/2015/sails/
+
 ## FRONT-END
 
 A very basic front end app has been created. I'm using mainly JQuery and accessing the API, so you can see how it's done. All you need to know is that:
