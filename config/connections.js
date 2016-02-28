@@ -80,7 +80,7 @@ module.exports.connections = {
     user: 'YOUR_POSTGRES_USER',
     password: 'YOUR_POSTGRES_PASSWORD',
     database: 'YOUR_POSTGRES_DB'
-  }
+  },
 
 
   /***************************************************************************
@@ -88,9 +88,9 @@ module.exports.connections = {
   * More adapters: https://github.com/balderdashy/sails                      *
   *                                                                          *
   ***************************************************************************/
-  'production': {
-    adapter" 'sails-mongo',
+  productionMondodbServer: {
+    adapter: 'sails-mongo',
     url: process.env.MONGOLAB_URI
   }
-  
+
 };
