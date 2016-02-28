@@ -22,7 +22,7 @@ module.exports = {
    },
 
    models: {
-     connection: 'localMongodbServer',//'localDiskDb',
+     connection: 'localDiskDb',
      migrate: 'safe'
    }
 
