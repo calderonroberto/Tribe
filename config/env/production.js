@@ -44,7 +44,7 @@ module.exports = {
   },
   */
   models: {
-     connection: 'productionMondodbServer',
+     connection: 'production',
      migrate: 'safe'
   }
 
