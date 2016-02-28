@@ -17,14 +17,6 @@ npm install
 sails lift
 ```
 
-The application will run with a local database. To use mongoDB, make sure to comment localDiskDb and uncomment localMongodbServer at config/models.js
-
-```
-//connection: 'localDiskDb',
-'connection': 'localMongodbServer'
-```
-
-
 ## DEPLOYING WITH HEROKU
 
 http://pburtchaell.com/2015/sails/
