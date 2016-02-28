@@ -16,6 +16,35 @@ To start the application, from the Tribe directory, install the modules and run:
 npm install
 sails lift
 ```
+## MongoDB setup
+
+Install MongoDB, and create your user:
+
+```
+use tribe
+db.addUser( { user: "user", pwd: "password", roles: [ "readWrite", "dbAdmin" ]} )
+```
+
+For development modify the `config/skipperconf.js` file to match your credentials
+
+```
+module.exports.skipperconf = {
+    local_uri: 'mongodb://user:password@localhost:27017/tribe.bucket'
+};
+```
+
+Configure your `config/env/development.js` file to match your credentials:
+
+```
+localMongodbServer: {
+  adapter: 'sails-mongo',
+  host: 'localhost',
+  port: 27017,
+  user: 'user',
+  password: 'password',
+  database: 'tribe'
+}
+```
 
 ## DEPLOYING WITH HEROKU
 

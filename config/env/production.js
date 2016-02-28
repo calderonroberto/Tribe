@@ -44,7 +44,6 @@ module.exports = {
     production: {
       adapter: 'sails-mongo',
       url: process.env.MONGOLAB_URI,
-      database: 'tribe'
     }
   }
   //'connection': 'localMongodbServer'
