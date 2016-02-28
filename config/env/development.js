@@ -27,6 +27,9 @@ module.exports = {
    },
 
    connections: {
+     localDiskDb: {
+       adapter: 'sails-disk'
+     },
      localMongodbServer: {
        adapter: 'sails-mongo',
        host: 'localhost',

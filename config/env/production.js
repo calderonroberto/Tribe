@@ -35,14 +35,6 @@ module.exports = {
      level: 'silent'
   },
 
-  /*
-  connections : {
-    productionMondodbServer: {
-      adapter: 'sails-mongo',
-      url: process.env.MONGOLAB_URI
-    }
-  },
-  */
   models: {
      connection: 'production',
      migrate: 'safe'
