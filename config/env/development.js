@@ -24,6 +24,16 @@ module.exports = {
    models: {
      connection: 'localDiskDb',
      migrate: 'safe'
-   }
+   },
 
+   connections: {
+     localMongodbServer: {
+       adapter: 'sails-mongo',
+       host: 'localhost',
+       port: 27017,
+       // user: 'username',
+       // password: 'password',
+       database: 'tribe'
+     }
+   }
 };
