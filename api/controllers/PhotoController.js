@@ -38,9 +38,10 @@ module.exports = {
 		//TODO: currently uploads are stored in ''/assets/images/photos/'.
 		// This is very inefficinent, you should use something like S3 or another file storage service.
 		{
-			dirname: sails.config.appPath+'/assets/public/photos/'
-		},
-		function (err, files) {
+			//dirname: sails.config.appPath+'/assets/public/photos/'
+			adapter: require('skipper-gridfs'),
+      uri: process.env.MONGOLAB_URI
+		}, function (err, files) {
 
       if (err)
         return res.serverError(err);
