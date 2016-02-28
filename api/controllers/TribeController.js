@@ -37,6 +37,16 @@ module.exports = {
 			}).exec(function createCB(err, created){
 				return res.json(created);
 			});
-    });
-  }
+		});
+	},
+
+	join: function (req, res) {
+		Tribe.find({id: req.param('id')}).populate('members').exec(function(e,r){
+			r[0].members.add(req.user.id);
+			r[0].save(function(err,updated){
+				return res.json(updated);
+			});
+		});
+	}
+
 };
