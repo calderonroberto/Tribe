@@ -28,9 +28,11 @@ module.exports.connections = {
   * Installed by default.                                                    *
   *                                                                          *
   ***************************************************************************/
+  /*
   localDiskDb: {
     adapter: 'sails-disk'
   },
+  */
 
   /***************************************************************************
   *                                                                          *
@@ -40,6 +42,7 @@ module.exports.connections = {
   * Run: npm install sails-mongo                                             *
   *                                                                          *
   ***************************************************************************/
+  /*
   localMongodbServer: {
     adapter: 'sails-mongo',
     host: 'localhost',
@@ -48,16 +51,19 @@ module.exports.connections = {
     // password: 'password',
     database: 'tribe'
   },
+  */
 
   /***************************************************************************
   *                                                                          *
   * More adapters: https://github.com/balderdashy/sails                      *
   *                                                                          *
   ***************************************************************************/
+  /*
   production: {
     adapter: 'sails-mongo',
     url: process.env.MONGOLAB_URI,
     database: 'tribe'
   }
+  */
 
 };
