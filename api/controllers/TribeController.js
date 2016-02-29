@@ -13,10 +13,6 @@ module.exports = {
 
 	upload: function  (req, res) {
 
-		var name = req.param('name');
-		var description = req.param('description');
-		var members = req.param('members');
-
     req.file('photo').upload(
 		{
 			adapter: require('skipper-gridfs'),
@@ -29,6 +25,10 @@ module.exports = {
 
 			//TODO: compress before saving
 			var url = files[0].fd.substring(files[0].fd.lastIndexOf('/')+1,files[0].fd.length);
+			var name = req.param('name');
+			var description = req.param('description');
+			var members = req.param('members');
+
 			Tribe.create({
 				image_url:url,
 				description: description,
