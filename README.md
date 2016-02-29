@@ -18,7 +18,7 @@ sails lift
 ```
 ## MongoDB setup
 
-Install MongoDB, and create your user:
+Install MongoDB. Create a user by running these two commands in a mongo client:
 
 ```
 use tribe
@@ -75,8 +75,6 @@ http://localhost:1337/app
 #### NOTE
 
 You will notice that when you upload a file the front end will not find it. This is because the .tmp/public folder is re-built on a schedule, even when you upload a file it will not automatically be available. There's two ways to go at it: 1) use a proper Amazon S3 storage ([following this documentation](http://sailsjs.org/documentation/concepts/file-uploads/uploading-to-s-3)), update the urls on the front end and you're done. 2) you can hack (I really don't like this option) it so that it directly saves it to .tmp/public, however you need to configure grunt not to delete your files upon reload. For more info [see this stackoverflow question](http://stackoverflow.com/questions/32333698/i-can-not-see-the-image-i-just-uploaded-sails-js).
-
-
 
 ## TRIBE API
 
