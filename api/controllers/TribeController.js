@@ -27,6 +27,7 @@ module.exports = {
       if (err)
         return res.serverError(err);
 
+			//TODO: compress before saving
 			var url = files[0].fd.substring(files[0].fd.lastIndexOf('/')+1,files[0].fd.length);
 			Tribe.create({
 				image_url:url,
