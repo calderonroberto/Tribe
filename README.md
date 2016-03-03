@@ -50,6 +50,71 @@ localMongodbServer: {
 
 http://pburtchaell.com/2015/sails/
 
+
+## Deploying with Apache
+
+https://www.digitalocean.com/community/tutorials/how-to-create-an-node-js-app-using-sails-js-on-an-ubuntu-vps
+
+You need to have the following two modules enabled in apache2
+
+```
+LoadModule proxy_http_module /usr/lib/apache2/modules/mod_proxy_http.so
+LoadModule proxy_module /usr/lib/apache2/modules/mod_proxy.so
+LoadModule proxy_html_module /usr/lib/apache2/modules/mod_proxy_html.so
+LoadModule xml2enc_module /usr/lib/apache2/modules/mod_xml2enc.so
+
+
+```
+
+Configure a proxy (if you have no other applications running in your machine):
+
+```
+<VirtualHost *:80>
+  ServerName  www.youserver.com
+
+  ProxyRequests Off
+  <Proxy *>
+     Order deny,allow
+     Allow from all
+  </Proxy>
+  ProxyPass / http://localhost:1337/
+  ProxyPassReverse / http://localhost:1337/
+
+</VirtualHost>
+```
+
+Or, if you have other applications running:
+
+
+NOTES:
+
+#<VirtualHost subdomain.mydomain.com:80>
+#    ProxyPass / http://localhost:8080/application1/
+#    ProxyPassReverse / http://localhost:8080/application1/
+#</VirtualHost>
+
+<VirtualHost *:80>
+ServerName beta.example.com
+ProxyPass / http://192.168.1.102/
+ProxyPassReverse / http://192.168.1.102/
+</VirtualHost>
+
+
+
+
+ProxyRequests off
+ProxyPass /tribe/  http://localhost:1337
+ProxyHTMLURLMap http://localhost:1337  /tribe
+
+<Location /tribe/>
+    ProxyPassReverse /
+    ProxyHTMLEnable On
+    ProxyHTMLURLMap  /  /tribe/
+    RequestHeader    unset  Accept-Encoding
+</Location>
+
+
+
 ## FRONT-END
 
 A very basic front end app has been created. I'm using mainly JQuery and accessing the API, so you can see how it's done. All you need to know is that:
