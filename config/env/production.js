@@ -45,9 +45,10 @@ module.exports = {
       adapter: 'sails-mongo',
       url: process.env.MONGOLAB_URI,
     }
-  }
+  },
   //'connection': 'localMongodbServer'
   //migrate:'safe', //this will keep your db every time
 
+  port: 1337
 
 };
