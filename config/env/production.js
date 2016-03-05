@@ -43,12 +43,8 @@ module.exports = {
   connections: {
     production: {
       adapter: 'sails-mongo',
-      url: process.env.MONGOLAB_URI,
+      url: process.env.MONGOLAB_URI || 'mongodb://user:password@localhost:27017/tribe',
     }
   },
-  //'connection': 'localMongodbServer'
-  //migrate:'safe', //this will keep your db every time
-
-  port: 1337
 
 };

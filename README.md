@@ -86,6 +86,20 @@ We will now configure a a proxy. Create the file `/etc/apache2/sites-available/0
 
 More information on this setup as reverse proxy can be found in [here](https://www.digitalocean.com/community/tutorials/how-to-use-apache-http-server-as-reverse-proxy-using-mod_proxy-extension)
 
+## Deployment in Production
+
+You will find a run.sh file you can run easily in production:
+
+```
+sh run.sh
+```
+
+Alternatively, run indefinitely using [PM2](https://github.com/Unitech/pm2). Install pm2 and run pm2. Which will start and daemonize the application. Simple.
+
+```
+npm install -g pm2
+pm2 start app.js -x -- --prod
+```
 
 ## FRONT-END
 
@@ -98,6 +112,8 @@ You only need to look at the files in the views directory. I tried to make it ea
 
 * The layout file imports JQuery and has the minimal style applied. This is only as example
 * Each view file has the corresponding JQuery code, please move it out.
+
+## Development
 
 Start the aplication with:
 
