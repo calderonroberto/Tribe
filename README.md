@@ -50,6 +50,43 @@ localMongodbServer: {
 
 http://pburtchaell.com/2015/sails/
 
+## DEPLOYING WITH HEROKU
+
+http://pburtchaell.com/2015/sails/
+
+## Deploying with Apache
+
+https://www.digitalocean.com/community/tutorials/how-to-create-an-node-js-app-using-sails-js-on-an-ubuntu-vps
+
+You need to have the following modules enabled in Apache. This can generally be done (in Ubuntu) in the ``/etc/apache2/mods-enable` directory.
+
+```
+LoadModule proxy_http_module /usr/lib/apache2/modules/mod_proxy_http.so
+LoadModule proxy_module /usr/lib/apache2/modules/mod_proxy.so
+LoadModule proxy_html_module /usr/lib/apache2/modules/mod_proxy_html.so
+LoadModule xml2enc_module /usr/lib/apache2/modules/mod_xml2enc.so
+```
+
+We will now configure a a proxy. Create the file `/etc/apache2/sites-available/001-tribe.conf` containing:
+
+```
+<VirtualHost *:80>
+  ServerName  your.sub.domain.url.com
+
+  ProxyRequests Off
+  <Proxy *>
+     Order deny,allow
+     Allow from all
+  </Proxy>
+  ProxyPass / http://localhost:1337/
+  ProxyPassReverse / http://localhost:1337/
+
+</VirtualHost>
+```
+
+More information on this setup as reverse proxy can be found in [here](https://www.digitalocean.com/community/tutorials/how-to-use-apache-http-server-as-reverse-proxy-using-mod_proxy-extension)
+
+
 ## FRONT-END
 
 A very basic front end app has been created. I'm using mainly JQuery and accessing the API, so you can see how it's done. All you need to know is that:
