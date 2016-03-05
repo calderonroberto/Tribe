@@ -50,10 +50,6 @@ localMongodbServer: {
 
 http://pburtchaell.com/2015/sails/
 
-## DEPLOYING WITH HEROKU
-
-http://pburtchaell.com/2015/sails/
-
 ## Deploying with Apache
 
 [This article](https://www.digitalocean.com/community/tutorials/how-to-create-an-node-js-app-using-sails-js-on-an-ubuntu-vps) is very helpful in understanding how to deploy in an ubuntu box. The instructions below are an adaptation of it.
