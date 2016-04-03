@@ -171,8 +171,8 @@ var AuthController = {
 
         // Upon successful login, send the user to the app were req.user
         // will be available.
-        res.redirect('/app');
-        //res.redirect('/#/tribes');
+        //res.redirect('/app');
+        res.redirect('/#/tribes');
       });
     });
   },

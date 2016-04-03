@@ -22,7 +22,6 @@ topicServices.factory('topics', function($http) {
       });
 
       promise.success(function(data) {
-        console.log(JSON.stringify({data: data}));
         return JSON.stringify({data: data});
       });
 
@@ -48,7 +47,6 @@ topicServices.factory('topics', function($http) {
       });
 
       promise.success(function(data) {
-        console.log(JSON.stringify({data: data}));
         return JSON.stringify({data: data});
       });
 

@@ -69,11 +69,13 @@ app.controller('navbarCtrl', function($scope,$log, $timeout, $interval, sharedPr
   };
 
   function getFourWord(str) {
+	if (str){
         if (str.indexOf(' ') === -1)
             return str;
         else
             //return str.substr(0, str.indexOf(' '));
           return str.substr(0, 30);
+	}
     };
 
 
