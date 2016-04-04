@@ -16,6 +16,28 @@ To start the application, from the Tribe directory, install the modules and run:
 npm install
 sails lift
 ```
+
+## FRONT-END
+
+A very basic front end app has been created by [zahramaslavi](https://github.com/zahramaslavi). It consists of a demo Angular project that lives in:
+
+```
+/views/
+/assets/
+```
+
+* You will find the main Angular controller in `assets/js/controllers/myApp.js`. In `assets/js` you will find the dependencies, directives and services used in the app.
+* Similarly, you will find the modals in `/assets/modals` and the templates in `assets/templates`
+
+The html files that Angular uses will be in: `views/modals` and `views/partials`. Look here to modify the layout.
+
+### Status
+
+The current front end is a prototype that needs to be extended and refactored. As it stands, the application is a proof of concept and needs more development. Tasks you will need to do:
+
+* Refactor `/assets/js/controllers/myApp.js`. Currently it uses a set of intervals to render the page. This is greatly inneficient and HAS to be refactored to use Angular callbacks. THIS TASK IS VERY IMPORTANT!
+* There is a great work to do in the forms (`views/partials`) to use validation (e.g. `ng-disable, ng-validate` to validate names, existence of names and images)
+
 ## MongoDB setup
 
 Install MongoDB. Create a user by running these two commands in a mongo client:
@@ -113,33 +135,6 @@ ProxyHTMLURLMap http://localhost:1337  /tribe
     RequestHeader    unset  Accept-Encoding
 </Location>
 
-
-
-## FRONT-END
-
-A very basic front end app has been created. I'm using mainly JQuery and accessing the API, so you can see how it's done. All you need to know is that:
-
-* The controller lives in: api/controllers/AppController.js
-* The views live in views/app
-
-You only need to look at the files in the views directory. I tried to make it easier for you to understand what's going on. So I put the style and javascript dependencies in the files directly. This is BAD!!! as they will not be minimized and served correctly. However, this is easier to get started with:
-
-* The layout file imports JQuery and has the minimal style applied. This is only as example
-* Each view file has the corresponding JQuery code, please move it out.
-
-Start the aplication with:
-
-```
-sails lift
-```
-
-and visit
-
-http://localhost:1337/app
-
-#### NOTE
-
-You will notice that when you upload a file the front end will not find it. This is because the .tmp/public folder is re-built on a schedule, even when you upload a file it will not automatically be available. There's two ways to go at it: 1) use a proper Amazon S3 storage ([following this documentation](http://sailsjs.org/documentation/concepts/file-uploads/uploading-to-s-3)), update the urls on the front end and you're done. 2) you can hack (I really don't like this option) it so that it directly saves it to .tmp/public, however you need to configure grunt not to delete your files upon reload. For more info [see this stackoverflow question](http://stackoverflow.com/questions/32333698/i-can-not-see-the-image-i-just-uploaded-sails-js).
 
 ## TRIBE API
 
