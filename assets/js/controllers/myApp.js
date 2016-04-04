@@ -29,7 +29,7 @@ app.directive('backgroundImageDirective', function () {
 })
 
 // configure our routes
-    app.config(function($routeProvider) {
+    app.config(["$routeProvider",function($routeProvider) {
         $routeProvider
             .when('/tribes', {
                 templateUrl : 'templates/tribes.html',
@@ -43,7 +43,7 @@ app.directive('backgroundImageDirective', function () {
                 templateUrl : 'templates/photos.html',
                 controller  : 'photosCtrl'
             });
-    });
+    }]);
 app.controller('navbarCtrl', ["$scope","$log", "$timeout", "$interval", "sharedProperties", "localStorageService", function($scope,$log, $timeout, $interval, sharedProperties, localStorageService) {
 
   $interval( function(){
