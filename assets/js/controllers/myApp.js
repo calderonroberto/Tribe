@@ -44,7 +44,7 @@ app.directive('backgroundImageDirective', function () {
                 controller  : 'photosCtrl'
             });
     });
-app.controller('navbarCtrl', function($scope,$log, $timeout, $interval, sharedProperties, localStorageService) {
+app.controller('navbarCtrl', ["$scope","$log", "$timeout", "$interval", "sharedProperties", "localStorageService", function($scope,$log, $timeout, $interval, sharedProperties, localStorageService) {
 
   $interval( function(){
         $scope.headerName = sharedProperties.getHeaderName();
@@ -79,10 +79,9 @@ app.controller('navbarCtrl', function($scope,$log, $timeout, $interval, sharedPr
     };
 
 
-  });
+  }]);
 
-app.controller('tribesCtrl', function($scope, $timeout, $interval, $mdDialog, $mdToast, tribes, sharedProperties, myModals, localStorageService) {
-
+app.controller('tribesCtrl', ["$scope", "$timeout", "$interval", "$mdDialog", "$mdToast", "tribes", "sharedProperties", "myModals", "localStorageService", function($scope, $timeout, $interval, $mdDialog, $mdToast, tribes, sharedProperties, myModals, localStorageService) {
 
     $interval( function(){
         tribesReload();
@@ -243,10 +242,10 @@ app.controller('tribesCtrl', function($scope, $timeout, $interval, $mdDialog, $m
     }
 
 
-});
+}]);
 
 
-app.controller('topicsCtrl', function($scope, $timeout, $interval, $mdDialog, $mdToast, sharedProperties, myModals, topics, localStorageService) {
+app.controller('topicsCtrl', ["$scope", "$timeout", "$interval", "$mdDialog", "$mdToast", "sharedProperties", "myModals", "topics", "localStorageService",function($scope, $timeout, $interval, $mdDialog, $mdToast, sharedProperties, myModals, topics, localStorageService) {
 
   /*Get the clicked tribeId on page load and get all related topics*/
   $scope.clickedTribe = function(){
@@ -383,12 +382,12 @@ app.controller('topicsCtrl', function($scope, $timeout, $interval, $mdDialog, $m
   }
 
 
-});
+}]);
 
 
 
 
-app.controller('photosCtrl', function($scope, $timeout, $interval, $mdDialog, $mdToast, sharedProperties, myModals, photos, localStorageService) {
+app.controller('photosCtrl', ["$scope", "$timeout", "$interval", "$mdDialog", "$mdToast", "sharedProperties", "myModals", "photos", "localStorageService", function($scope, $timeout, $interval, $mdDialog, $mdToast, sharedProperties, myModals, photos, localStorageService) {
 
   /*Get the clicked tribeId on page load and get all related topics*/
   $scope.clickedTopicPhotos = function(){
@@ -533,4 +532,4 @@ app.controller('photosCtrl', function($scope, $timeout, $interval, $mdDialog, $m
         });
     }
 
-});
+}]);
