@@ -114,23 +114,10 @@ sh run.sh
 
 Alternatively, run indefinitely using [PM2](https://github.com/Unitech/pm2). Install pm2 and run pm2. Which will start and daemonize the application. Simple.
 
-<<<<<<< HEAD
 ```
 npm install -g pm2
 pm2 start app.js -x -- --prod
 ```
-
-## FRONT-END
-
-A very basic front end app has been created. I'm using mainly JQuery and accessing the API, so you can see how it's done. All you need to know is that:
-
-* The controller lives in: api/controllers/AppController.js
-* The views live in views/app
-
-You only need to look at the files in the views directory. I tried to make it easier for you to understand what's going on. So I put the style and javascript dependencies in the files directly. This is BAD!!! as they will not be minimized and served correctly. However, this is easier to get started with:
-
-* The layout file imports JQuery and has the minimal style applied. This is only as example
-* Each view file has the corresponding JQuery code, please move it out.
 
 ## Development
 
@@ -148,8 +135,6 @@ http://localhost:1337/app
 
 You will notice that when you upload a file the front end will not find it. This is because the .tmp/public folder is re-built on a schedule, even when you upload a file it will not automatically be available. There's two ways to go at it: 1) use a proper Amazon S3 storage ([following this documentation](http://sailsjs.org/documentation/concepts/file-uploads/uploading-to-s-3)), update the urls on the front end and you're done. 2) you can hack (I really don't like this option) it so that it directly saves it to .tmp/public, however you need to configure grunt not to delete your files upon reload. For more info [see this stackoverflow question](http://stackoverflow.com/questions/32333698/i-can-not-see-the-image-i-just-uploaded-sails-js).
 
-=======
->>>>>>> develop
 ## TRIBE API
 
 The API is straightfoward and you can learn more about it in [Sails Blueprint documentation](http://sailsjs.org/documentation/reference/blueprint-api#?blueprint-actions). Here documented are the ones you might be interested in knowing
