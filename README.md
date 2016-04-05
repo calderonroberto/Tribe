@@ -16,6 +16,28 @@ To start the application, from the Tribe directory, install the modules and run:
 npm install
 sails lift
 ```
+
+## FRONT-END
+
+A very basic front end app has been created by [zahramaslavi](https://github.com/zahramaslavi). It consists of a demo Angular project that lives in:
+
+```
+/views/
+/assets/
+```
+
+* You will find the main Angular controller in `assets/js/controllers/myApp.js`. In `assets/js` you will find the dependencies, directives and services used in the app.
+* Similarly, you will find the modals in `/assets/modals` and the templates in `assets/templates`
+
+The html files that Angular uses will be in: `views/modals` and `views/partials`. Look here to modify the layout.
+
+### Status
+
+The current front end is a prototype that needs to be extended and refactored. As it stands, the application is a proof of concept and needs more development. Tasks you will need to do:
+
+* Refactor `/assets/js/controllers/myApp.js`. Currently it uses a set of intervals to render the page. This is greatly inneficient and HAS to be refactored to use Angular callbacks. THIS TASK IS VERY IMPORTANT!
+* There is a great work to do in the forms (`views/partials`) to use validation (e.g. `ng-disable, ng-validate` to validate names, existence of names and images)
+
 ## MongoDB setup
 
 Install MongoDB. Create a user by running these two commands in a mongo client:
@@ -96,18 +118,6 @@ Alternatively, run indefinitely using [PM2](https://github.com/Unitech/pm2). Ins
 npm install -g pm2
 pm2 start app.js -x -- --prod
 ```
-
-## FRONT-END
-
-A very basic front end app has been created. I'm using mainly JQuery and accessing the API, so you can see how it's done. All you need to know is that:
-
-* The controller lives in: api/controllers/AppController.js
-* The views live in views/app
-
-You only need to look at the files in the views directory. I tried to make it easier for you to understand what's going on. So I put the style and javascript dependencies in the files directly. This is BAD!!! as they will not be minimized and served correctly. However, this is easier to get started with:
-
-* The layout file imports JQuery and has the minimal style applied. This is only as example
-* Each view file has the corresponding JQuery code, please move it out.
 
 ## Development
 

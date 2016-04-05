@@ -24,7 +24,12 @@ module.exports = {
         return res.serverError(err);
 
 			//TODO: compress before saving
-			var url = files[0].fd.substring(files[0].fd.lastIndexOf('/')+1,files[0].fd.length);
+			var url;
+			if (files.length > 0) {
+				var url = files[0].fd.substring(files[0].fd.lastIndexOf('/')+1,files[0].fd.length);
+			} else {
+				var url = ""
+			}
 			var name = req.param('name');
 			var description = req.param('description');
 			var members = req.param('members');
