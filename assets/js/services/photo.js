@@ -2,7 +2,7 @@ var photoServices = angular.module('photoServices', []);
 
 
 //Tribe service
-photoServices.factory('photos', function($http) {
+photoServices.factory('photos', ['$http', function($http) {
   return {
     requestPhotos: function(topicId)
     {
@@ -49,7 +49,7 @@ photoServices.factory('photos', function($http) {
       });
       return promise;
     },
-    
+
     /////////Under development
     updatePhoto: function(photoDescription, photoId)
     {
@@ -136,4 +136,4 @@ photoServices.factory('photos', function($http) {
       return promise;
     },
   };
-});
+}]);

@@ -1,7 +1,7 @@
 var modalServices = angular.module('modalServices', ['ngMaterial']);
 
 //A service for creating modal
-modalServices.factory('myModals', function($mdDialog) {
+modalServices.factory('myModals', ['$mdDialog', function($mdDialog) {
 
     return {
         createTribeModal: function(ev, modalUrl) {
@@ -52,7 +52,7 @@ modalServices.factory('myModals', function($mdDialog) {
                 controller: function($mdDialog){
                     this.description = description;
                     this.topicId = topicId;
-                  
+
                 },
                 controllerAs:'modal'
             });
@@ -84,4 +84,4 @@ modalServices.factory('myModals', function($mdDialog) {
             });
         },
     };
-});
+}]);

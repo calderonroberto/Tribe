@@ -1,7 +1,7 @@
  var sharedProperties = angular.module('sharedProperties', ['ngCookies']);
 
 //Shared variables and cookies
-sharedProperties.factory('sharedProperties', function($cookies) {
+sharedProperties.factory('sharedProperties', ['$cookies', function($cookies) {
     var userId;
     var username;
     var headerName;
@@ -102,4 +102,4 @@ sharedProperties.factory('sharedProperties', function($cookies) {
 
         },
     };
-});
+}]);

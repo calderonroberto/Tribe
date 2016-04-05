@@ -2,7 +2,7 @@ var tribeServices = angular.module('tribeServices', []);
 
 
 //Tribe service
-tribeServices.factory('tribes', function($http) {
+tribeServices.factory('tribes', ['$http', function($http) {
 
   return {
     requestTribes: function()
@@ -143,4 +143,4 @@ tribeServices.factory('tribes', function($http) {
       return promise;
     },
   };
-});
+}]);

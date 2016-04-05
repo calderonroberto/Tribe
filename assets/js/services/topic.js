@@ -2,7 +2,7 @@ var topicServices = angular.module('topicServices', []);
 
 
 //Tribe service
-topicServices.factory('topics', function($http) {
+topicServices.factory('topics', ['$http', function($http) {
 
   return {
     requestAllTopics: function()
@@ -144,4 +144,4 @@ topicServices.factory('topics', function($http) {
       return promise;
     },
   };
-});
+}]);
